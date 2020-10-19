@@ -25,8 +25,7 @@ class Home extends Component {
 	fetchData = async (value = 1) => {
 		this.setState({ loading: true, error: null });
 		try {
-			let data = await api.getCharacters(this.state.page);
-			console.log('object')
+			let data = await api.getCharacters(value);
 			this.setState({
 				loading: false,
 				error: null,

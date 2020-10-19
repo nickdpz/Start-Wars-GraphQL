@@ -40,28 +40,6 @@ class Home extends Component {
 
 	handleChange = (event, value) => {
 		this.fetchData(value);
-		// let pages = this.state.pages;
-		// if (!pages.filter((item) => value === item).length) {
-		// 	let allCharacters = this.state.characters;
-		// 	let charactersCurrent = [];
-		// 	for (let index = (value - 1) * 20; index < value * 20; index++) {
-		// 		charactersCurrent.push(allCharacters[index]);
-		// 	}
-		// 	this.setState({ charactersCurrent });
-		// } else {
-		// 	pages.push(value);
-		// 	pages.sort((a, b) => {
-		// 		if (a.id > b.id) {
-		// 			return 1;
-		// 		}
-		// 		if (a.id < b.id) {
-		// 			return -1;
-		// 		}
-		// 		return 0;
-		// 	});
-		// 	this.setState({ pages });
-		// 	this.fetchData();
-		// }
 	};
 
 	componentDidMount() {
@@ -87,7 +65,7 @@ class Home extends Component {
 				</div>
 				{!this.state.loading && (
 					<>
-						<section className="container-all-characters">
+						<section className="container-all-characters container-fluid">
 							<div className="container-characters">
 								{this.state.charactersCurrent.map((item) => (
 									<CharacterItem key={item.id} character={item}></CharacterItem>

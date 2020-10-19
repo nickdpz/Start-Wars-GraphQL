@@ -23,7 +23,7 @@
 }
 
 .character-card-container {
-    width: 600px;
+    width: min(75%, 600px);
     height: 220px;
     display: flex;
     overflow: hidden;

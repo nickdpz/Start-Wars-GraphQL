@@ -23,6 +23,7 @@ class Home extends Component {
 		page: 1,
 		count: 1,
 		characterId: null,
+		characterName: null,
 		isActivePopup: false,
 	};
 	fetchData = async (value = 1) => {
@@ -49,8 +50,12 @@ class Home extends Component {
 		this.fetchData();
 	}
 
-	handlePopup = (value) => {
-		this.setState({ isActivePopup: true, characterId: value });
+	handlePopup = (id, name) => {
+		this.setState({
+			isActivePopup: true,
+			characterId: id,
+			characterName: name,
+		});
 	};
 
 	handlePopupClose = () => {
@@ -61,7 +66,11 @@ class Home extends Component {
 		return (
 			<>
 				{this.state.isActivePopup && (
-					<CharacterDetails id={this.state.characterId} handleClose={this.handlePopupClose}/>
+					<CharacterDetails
+						id={this.state.characterId}
+						handleClose={this.handlePopupClose}
+						name={this.state.characterName}
+					/>
 				)}
 				<main className="container-full">
 					<section className="title-page-container">

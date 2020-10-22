@@ -17,8 +17,13 @@ class CharacterDetails extends Component {
 		this.setState({ loading: true, error: false });
 		try {
 			let data = await api.getCharacter(this.props.id);
+
 			console.log(data);
-			this.setState({ loading: false, error: false });
+			this.setState({
+				loading: false,
+				error: false,
+				character: data.charactersByIds[0],
+			});
 		} catch (error) {
 			this.setState({ loading: false, error: error });
 		}
@@ -38,7 +43,7 @@ class CharacterDetails extends Component {
 			<>
 				<Modal show={this.state.show} onHide={this.handleClose} size="lg">
 					<Modal.Header closeButton>
-						<Modal.Title>{this.state.character.id}</Modal.Title>
+						<Modal.Title>{this.props.name}</Modal.Title>
 					</Modal.Header>
 					<Modal.Body>
 						<div className="container-modal">
@@ -55,7 +60,18 @@ class CharacterDetails extends Component {
 									loading={this.state.loading}
 								/>
 							) : (
-								<div>{this.props.id}</div>
+								<>
+									<div className="d-flex justify-content-center">
+										<img
+											src={this.state.character.image}
+											alt={this.state.character.name}
+											className="rounded-circle"//img-rounded
+										/>
+									</div>
+									<div className="col-12">
+										<h4>{this.state.character.name}</h4>
+									</div>
+								</>
 							)}
 						</div>
 					</Modal.Body>

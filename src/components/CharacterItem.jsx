@@ -3,6 +3,16 @@ import './styles/CharacterItem.css';
 
 const ProductItem = (props) => {
 	const { character } = props;
+
+	const classStatus = (status) => {
+		if (status === 'Alive') {
+			return 'mx-3 text-success';
+		} else if (status === 'Dead') {
+			return 'mx-3 text-danger';
+		} else {
+			return 'mx-3 text-capitalize d-inline-block';//text-uppercase 
+		}
+	};
 	return (
 		<>
 			<div className="character-card-container">
@@ -14,13 +24,13 @@ const ProductItem = (props) => {
 						<span
 							className="button-tag"
 							onClick={() => {
-								props.handlerName(props.character.id);
+								props.handlerName(character.id, character.name);
 							}}
 						>
 							{character.name}
 						</span>
-						<span className="status mx-3">
-							<span className="status__icon"></span> {character.status}
+						<span className={classStatus(character.status)}>
+							{character.status}
 						</span>
 					</div>
 					<div className="section">

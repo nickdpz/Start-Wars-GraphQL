@@ -44,3 +44,9 @@
     background: rgb(36, 40, 47);
     min-height: calc(50vh - 60px);
 }
+
+@media (max-width: 500px) {
+    .title-page {
+        font-size: 55px;
+    }
+}

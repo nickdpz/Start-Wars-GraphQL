@@ -34,8 +34,31 @@ const getCharacters = async(page = Number) => {
 const getCharacter = async(id = Number) => {
     try {
         const { data } = await client.query({
-            query: gql `
-            query getCharactersByPage($page: Int) {`,
+            query: gql `query{
+                charactersByIds(ids:${id}){
+                  id,
+                  name,
+                  status,
+                  species,
+                  type,
+                  gender,
+                  origin{
+                    name,
+                    dimension,
+                    type
+                  },
+                  location{
+                    name,
+                    dimension,
+                    type
+                  },
+                  image,
+                  episode{
+                    name
+                  },
+                  created
+                }
+              }`,
             variables: {},
         });
         return data

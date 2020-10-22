@@ -5,6 +5,7 @@ import { Pagination } from '@material-ui/lab';
 import api from '../utils/api';
 import { css } from '@emotion/core';
 import ClipLoader from 'react-spinners/ClipLoader';
+import CharacterDetails from '../components/CharacterDetails';
 const override = css`
 	display: block;
 	margin: 0 auto;
@@ -21,6 +22,8 @@ class Home extends Component {
 		pages: [1],
 		page: 1,
 		count: 1,
+		characterId: null,
+		isActivePopup: false,
 	};
 	fetchData = async (value = 1) => {
 		this.setState({ loading: true, error: null });
@@ -46,42 +49,59 @@ class Home extends Component {
 		this.fetchData();
 	}
 
+	handlePopup = (value) => {
+		this.setState({ isActivePopup: true, characterId: value });
+	};
+
+	handlePopupClose = () => {
+		this.setState({ isActivePopup: false });
+	};
+
 	render() {
 		return (
-			<main className="container-full">
-				<section className="title-page-container">
-					<h1 className="title-page">Rick And Morty Characters</h1>
-					{/* <div className="hero-image" width="378">
+			<>
+				{this.state.isActivePopup && (
+					<CharacterDetails id={this.state.characterId} handleClose={this.handlePopupClose}/>
+				)}
+				<main className="container-full">
+					<section className="title-page-container">
+						<h1 className="title-page">Rick And Morty Characters</h1>
+						{/* <div className="hero-image" width="378">
 						<img src={logo} alt="start wars logo" />
 					</div> */}
-				</section>
-				<div className="sweet-loading mt-4">
-					<ClipLoader
-						css={override}
-						size={150}
-						color={'#123abc'}
-						loading={this.state.loading}
-					/>
-				</div>
-				{!this.state.loading && (
-					<>
-						<section className="container-all-characters container-fluid">
-							<div className="container-characters">
-								{this.state.charactersCurrent.map((item) => (
-									<CharacterItem key={item.id} character={item}></CharacterItem>
-								))}
-							</div>
-						</section>
-						<section className="py-4 d-flex justify-content-center">
-							<Pagination
-								count={this.state.count}
-								page={this.state.page}
-								onChange={this.handleChange}
-							/>
-						</section>
-					</>
-				)}
-			</main>
+					</section>
+					<div className="sweet-loading mt-4">
+						<ClipLoader
+							css={override}
+							size={150}
+							color={'#123abc'}
+							loading={this.state.loading}
+						/>
+					</div>
+					{!this.state.loading && (
+						<>
+							<section className="container-all-characters container-fluid">
+								<div className="container-characters">
+									{this.state.charactersCurrent.map((item) => (
+										<CharacterItem
+											key={item.id}
+											character={item}
+											handlerName={this.handlePopup}
+										></CharacterItem>
+									))}
+								</div>
+							</section>
+							<section className="py-4 d-flex justify-content-center">
+								<Pagination
+									count={this.state.count}
+									page={this.state.page}
+									onChange={this.handleChange}
+								/>
+							</section>
+						</>
+					)}
+				</main>
+			</>
 		);
 	}
 }

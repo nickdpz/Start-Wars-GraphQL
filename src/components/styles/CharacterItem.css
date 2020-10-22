@@ -20,15 +20,26 @@
     color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
+    width: 40%;
 }
 
 .character-card-container {
-    width: min(75%, 600px);
-    height: 220px;
+    width: min(88%, 600px);
+    height: min(35vh, 250px);
     display: flex;
     overflow: hidden;
     background: rgb(60, 62, 68);
     border-radius: 0.5rem;
     margin: 0.75rem;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+.button-tag {
+    color: #4165f3;
+    transition: color .5s;
+}
+
+.button-tag:hover {
+    color: #31a10f;
+    cursor: pointer
 }

@@ -2,30 +2,31 @@ import React, { Component } from 'react';
 import api from '../utils/api';
 import { css } from '@emotion/core';
 import MoonLoader from 'react-spinners/MoonLoader';
-import { Link } from 'react-router-dom';
+import moment from 'moment';
 import './styles/Home.css';
 import './styles/Episodes.css';
+import { Link } from 'react-router-dom';
 const override = css`
 	display: block;
 	margin: 0 auto;
 	border-color: blue;
 `;
 
-class Episode extends Component {
+class Location extends Component {
 	state = {
 		loading: true,
 		error: false,
-		episode: {},
+		location: {},
 	};
 	fetchData = async (id) => {
 		this.setState({ loading: true, error: null });
 		try {
-			let data = await api.getEpisode(this.props.match.params.episodeId);
-			console.log(data.episodesByIds[0]);
+			let data = await api.getLocation(this.props.match.params.locationId);
+			console.log(data.locationsByIds[0]);
 			this.setState({
 				loading: false,
 				error: null,
-				episode: data.episodesByIds[0],
+				location: data.locationsByIds[0],
 			});
 		} catch (error) {
 			this.setState({ loading: false, error: error });
@@ -38,7 +39,7 @@ class Episode extends Component {
 		return (
 			<main className="container-full">
 				<section className="title-page-container title-color">
-					<h1 className="title-page text-white">Rick And Morty Episodes</h1>
+					<h1 className="title-page text-white">Rick And Morty Locations</h1>
 				</section>
 				<div className="sweet-loading mt-4">
 					<MoonLoader
@@ -49,21 +50,23 @@ class Episode extends Component {
 					/>
 				</div>
 				{!this.state.loading && (
-					<div className="container container-color">
+					<div className="container">
 						<div className="row d-flex justify-content-center align-items-center justify-content-lg-between">
-							<h1 className="title-episode">{`${this.state.episode.name}  -  ${this.state.episode.episode}`}</h1>
-                            <h2>
-                                {`Air Date ⭐ ${this.state.episode.air_date}`}
-                            </h2>
+							<h1 className="title-location">{`${this.state.location.name}  -  ${this.state.location.dimension}`}</h1>
+							<h2>
+								{`Created ${moment(this.state.location.created).format(
+									'MMM DD, YYYY'
+								)}`}
+							</h2>
 						</div>
-                        <div className="row mt-2">
+						<div className="row mt-2">
 							<Link to="/">
-								<h2>Characters</h2>
+								<h2>Residents</h2>
 							</Link>
 						</div>
 						<div className="carousel row">
 							<div className="carousel__container">
-								{this.state.episode.characters.map((character, id) => (
+								{this.state.location.residents.map((character, id) => (
 									<div className="carousel-item" key={id}>
 										<img
 											className="carousel-item__img"
@@ -86,4 +89,4 @@ class Episode extends Component {
 	}
 }
 
-export default Episode;
+export default Location;

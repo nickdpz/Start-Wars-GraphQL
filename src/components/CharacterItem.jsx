@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles/CharacterItem.css';
+import { Link } from 'react-router-dom';
 
 const ProductItem = (props) => {
 	const { character } = props;
@@ -35,25 +36,21 @@ const ProductItem = (props) => {
 					</div>
 					<div className="section">
 						<span className="text-gray">Last known location:</span>
-						<a
-							href={`https://rickandmortyapi.com/api/location/${character.episode[0].id}`}
-							rel="nofollow noopener noreferrer"
-							target="_blank"
+						<Link
+							to={`/locations/${character.location.id}`}
 							className="mx-3"
 						>
 							{character.location.name}
-						</a>
+						</Link>
 					</div>
 					<div className="section">
 						<span className="text-gray">First seen in:</span>
-						<a
-							href={`https://rickandmortyapi.com/api/episode/${character.episode[0].id}`}
-							rel="nofollow noopener noreferrer"
-							target="_blank"
+						<Link
 							className="mx-3"
+							to={`/episodes/${character.episode[0].id}`}
 						>
 							{character.episode[0].name}
-						</a>
+						</Link>
 					</div>
 				</div>
 			</div>

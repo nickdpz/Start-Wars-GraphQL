@@ -92,5 +92,28 @@ const getEpisode = async(episodeId) => {
         throw (error)
     }
 }
+const getLocation = async(locationId) => {
+    try {
+        const { data } = await client.query({
+            query: gql `query{
+              locationsByIds(ids:${locationId}){
+                id,
+                name,
+                type,
+                dimension,
+                residents{
+                  name,
+                  image
+                },
+                created
+              }    
+            }`,
+            variables: {},
+        });
+        return data
+    } catch (error) {
+        throw (error)
+    }
+}
 
-export default { getCharacters, getCharacter, getEpisode };
+export default { getCharacters, getCharacter, getEpisode, getLocation };

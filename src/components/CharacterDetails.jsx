@@ -115,7 +115,7 @@ class CharacterDetails extends Component {
 											<strong className="mr-2">Origin</strong>
 										</div>
 										<div className="col-9 mt-2">
-											<p>{`${this.state.character.origin.type} ${this.state.character.origin.name} ${this.state.character.origin.dimension}`}</p>
+											<Link to={`/locations/${this.state.character.location.id}`}>{`${this.state.character.origin.type} ${this.state.character.origin.name} ${this.state.character.origin.dimension}`}</Link>
 										</div>
 									</div>
 									<div className="row">
@@ -123,7 +123,9 @@ class CharacterDetails extends Component {
 											<strong>Location Current</strong>
 										</div>
 										<div className="col-9 mt-2">
-											<p>{`${this.state.character.location.type} ${this.state.character.location.name} Dimension ${this.state.character.location.dimension}`}</p>
+											<Link
+												to={`/locations/${this.state.character.location.id}`}
+											>{`${this.state.character.location.type} ${this.state.character.location.name} Dimension ${this.state.character.location.dimension}`}</Link>
 										</div>
 									</div>
 									<div className="row">

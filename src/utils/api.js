@@ -43,11 +43,13 @@ const getCharacter = async(id = Number) => {
                   type,
                   gender,
                   origin{
+                    id,
                     name,
                     dimension,
                     type
                   },
                   location{
+                    id,
                     name,
                     dimension,
                     type

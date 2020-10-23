@@ -54,6 +54,7 @@ const getCharacter = async(id = Number) => {
                   },
                   image,
                   episode{
+                    id,
                     name
                   },
                   created
@@ -63,8 +64,33 @@ const getCharacter = async(id = Number) => {
         });
         return data
     } catch (error) {
-
+        throw (error)
     }
 }
 
-export default { getCharacters, getCharacter };
+
+const getEpisode = async(episodeId) => {
+    try {
+        const { data } = await client.query({
+            query: gql `query{
+              episodesByIds(ids:${episodeId}){
+                id,
+                name,
+                air_date,
+                episode,
+                characters{
+                  name,
+                  image
+                },
+                created
+              }
+            }`,
+            variables: {},
+        });
+        return data
+    } catch (error) {
+        throw (error)
+    }
+}
+
+export default { getCharacters, getCharacter, getEpisode };

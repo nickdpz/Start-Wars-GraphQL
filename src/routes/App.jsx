@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import NotFound from '../pages/NotFound';
 import Home from '../pages/Home';
+import Episode from '../pages/Episode';
 import { connect } from 'react-redux';
 import Main from '../layouts/Main';
 
@@ -11,6 +12,7 @@ const App = (props) => {
 			<Main>
 				<Switch>
 					<Route exact path="/" component={Home} />
+					<Route exact path="/episodes/:episodeId" component={Episode} />
 					<Route component={NotFound} />
 				</Switch>
 			</Main>

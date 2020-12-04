@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './styles/Home.css';
+import '../assets/styles/Home.css';
 import CharacterItem from '../components/CharacterItem';
 import { Pagination } from '@material-ui/lab';
 import api from '../utils/api';

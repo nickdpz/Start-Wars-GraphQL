@@ -3,8 +3,8 @@ import api from '../utils/api';
 import { css } from '@emotion/core';
 import MoonLoader from 'react-spinners/MoonLoader';
 import moment from 'moment';
-import './styles/Home.css';
-import './styles/Episodes.css';
+import '../assets/styles/Home.css';
+import '../assets/styles/Episodes.css';
 import { Link } from 'react-router-dom';
 const override = css`
 	display: block;

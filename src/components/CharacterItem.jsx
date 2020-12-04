@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles/CharacterItem.css';
+import '../assets/styles/CharacterItem.css';
 import { Link } from 'react-router-dom';
 
 const ProductItem = (props) => {

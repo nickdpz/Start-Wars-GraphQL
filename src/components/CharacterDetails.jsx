@@ -3,7 +3,7 @@ import { Modal, Button } from 'react-bootstrap';
 import BeatLoader from 'react-spinners/BeatLoader';
 import api from '../utils/api';
 import { css } from '@emotion/core';
-import './styles/CharacterDetails.css';
+import '../assets/styles/CharacterDetails.css';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
 

@@ -25,9 +25,10 @@
     },
     "scripts": {
         "start": "react-scripts start",
-        "build": "react-scripts build",
+        "build": "react-scripts build && rm -rf docs && cp -r build docs",
         "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "start:pro": "serve -s build"
     },
     "postbuild": "mv dist docs",
     "eslintConfig": {
@@ -44,5 +45,8 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "devDependencies": {
+        "serve": "^12.0.1"
     }
 }

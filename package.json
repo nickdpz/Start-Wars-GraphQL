@@ -25,14 +25,13 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && rm -rf docs && cp -r build docs",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start:pro": "serve -s build"
   },
-  "postbuild": "mv dist docs",
   "eslintConfig": {
     "extends": "react-app"
   },

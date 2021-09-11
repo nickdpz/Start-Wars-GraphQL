@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/Rick-Morty-GraphQL/static/css/main.ab0fbdd2.chunk.css",
-    "main.js": "/Rick-Morty-GraphQL/static/js/main.84759b54.chunk.js",
-    "main.js.map": "/Rick-Morty-GraphQL/static/js/main.84759b54.chunk.js.map",
-    "runtime-main.js": "/Rick-Morty-GraphQL/static/js/runtime-main.79dfb7c3.js",
-    "runtime-main.js.map": "/Rick-Morty-GraphQL/static/js/runtime-main.79dfb7c3.js.map",
-    "static/css/2.1816a92f.chunk.css": "/Rick-Morty-GraphQL/static/css/2.1816a92f.chunk.css",
-    "static/js/2.47169913.chunk.js": "/Rick-Morty-GraphQL/static/js/2.47169913.chunk.js",
-    "static/js/2.47169913.chunk.js.map": "/Rick-Morty-GraphQL/static/js/2.47169913.chunk.js.map",
+    "main.css": "/Rick-Morty-GraphQL/static/css/main.6c2df5b7.chunk.css",
+    "main.js": "/Rick-Morty-GraphQL/static/js/main.0db98572.chunk.js",
+    "main.js.map": "/Rick-Morty-GraphQL/static/js/main.0db98572.chunk.js.map",
+    "runtime-main.js": "/Rick-Morty-GraphQL/static/js/runtime-main.10466022.js",
+    "runtime-main.js.map": "/Rick-Morty-GraphQL/static/js/runtime-main.10466022.js.map",
+    "static/css/2.aba33d3a.chunk.css": "/Rick-Morty-GraphQL/static/css/2.aba33d3a.chunk.css",
+    "static/js/2.0b08c8b7.chunk.js": "/Rick-Morty-GraphQL/static/js/2.0b08c8b7.chunk.js",
+    "static/js/2.0b08c8b7.chunk.js.map": "/Rick-Morty-GraphQL/static/js/2.0b08c8b7.chunk.js.map",
     "index.html": "/Rick-Morty-GraphQL/index.html",
-    "precache-manifest.edd88c3d762d08ed64f59df36d5c3873.js": "/Rick-Morty-GraphQL/precache-manifest.edd88c3d762d08ed64f59df36d5c3873.js",
+    "precache-manifest.4ed8507ae44985204cbdab9552159776.js": "/Rick-Morty-GraphQL/precache-manifest.4ed8507ae44985204cbdab9552159776.js",
     "service-worker.js": "/Rick-Morty-GraphQL/service-worker.js",
-    "static/css/2.1816a92f.chunk.css.map": "/Rick-Morty-GraphQL/static/css/2.1816a92f.chunk.css.map",
-    "static/css/main.ab0fbdd2.chunk.css.map": "/Rick-Morty-GraphQL/static/css/main.ab0fbdd2.chunk.css.map",
-    "static/js/2.47169913.chunk.js.LICENSE.txt": "/Rick-Morty-GraphQL/static/js/2.47169913.chunk.js.LICENSE.txt"
+    "static/css/2.aba33d3a.chunk.css.map": "/Rick-Morty-GraphQL/static/css/2.aba33d3a.chunk.css.map",
+    "static/css/main.6c2df5b7.chunk.css.map": "/Rick-Morty-GraphQL/static/css/main.6c2df5b7.chunk.css.map",
+    "static/js/2.0b08c8b7.chunk.js.LICENSE.txt": "/Rick-Morty-GraphQL/static/js/2.0b08c8b7.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.79dfb7c3.js",
-    "static/css/2.1816a92f.chunk.css",
-    "static/js/2.47169913.chunk.js",
-    "static/css/main.ab0fbdd2.chunk.css",
-    "static/js/main.84759b54.chunk.js"
+    "static/js/runtime-main.10466022.js",
+    "static/css/2.aba33d3a.chunk.css",
+    "static/js/2.0b08c8b7.chunk.js",
+    "static/css/main.6c2df5b7.chunk.css",
+    "static/js/main.0db98572.chunk.js"
   ]
 }

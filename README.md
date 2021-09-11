@@ -9,5 +9,13 @@ En esta vista de capítulos se puede ver la fecha de lanzamiento, el nombre los 
 ```sh
 $ npm run build
 ```
+## Public github repository
+
+"homepage": "http://nickdpz.github.io/Rick-Morty-GraphQL",
+
+```sh
+$ npm run build
+```
+
 
 [URL](https://nickdpz.github.io/Rick-Morty-GraphQL/)

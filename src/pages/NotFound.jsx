@@ -1,7 +1,9 @@
-import React from 'react';
+import React from "react";
 
-function NotFound() {
-  return <h1>404: Not Found</h1>;
-}
+const NotFound = () => (
+  <div className="d-flex justify-content-center">
+    <h1>404: Not Found</h1>;
+  </div>
+);
 
 export default NotFound;
